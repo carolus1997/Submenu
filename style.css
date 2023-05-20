@@ -1,6 +1,12 @@
 body {
   color: white;
   text-align: center;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 a {
@@ -9,6 +15,12 @@ a {
 
 h1 {
   font-size: 3em;
+}
+
+.icono {
+  width: 40px;
+  height: 40px;
+  fill: white;
 }
 
 .menu-open {
@@ -69,22 +81,32 @@ h1 {
 
 .menu {
   filter: url('#goo');
-  position: relative;
   left: 50%;
-  margin-left: -190px;
-  margin-top: 20%;
-  padding-top: 20px;
-  padding-left: 190px;
+  /*margin-left: -190px;
+  padding-left: 190px;*/
   width: 380px;
   height: 250px;
   box-sizing: border-box;
   font-size: 20px;
   text-align: left;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 20px;
+  position: fixed;
+  bottom: 5%;
+  left: 13%;
+}
+.menu-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .menu-item:hover {
   background: #051440;
   color: white;
+  transform: scale(1.2);
 }
 
 .menu-item:nth-child(3) {
@@ -163,5 +185,150 @@ h1 {
   transform: translate3d(104px, 52px, 0);
 }
 
+.menu-open:checked ~ .menu-item:hover:nth-child(3) {
+  transform: translate3d(-104px, -52px, 0) scale(1.2);
+}
+
+.menu-open:checked ~ .menu-item:hover:nth-child(4) {
+  transform: translate3d(0px, -104px, 0) scale(1.2);
+}
+
+.menu-open:checked ~ .menu-item:hover:nth-child(5) {
+  transform: translate3d(104px, -52px, 0) scale(1.2);
+}
+
+.menu-open:checked ~ .menu-item:hover:nth-child(6) {
+  transform: translate3d(-104px, 52px, 0) scale(1.2);
+}
+
+.menu-open:checked ~ .menu-item:hover:nth-child(7) {
+  transform: translate3d(0px, 104px, 0) scale(1.2);
+}
+
+.menu-open:checked ~ .menu-item:hover:nth-child(8) {
+  transform: translate3d(104px, 52px, 0) scale(1.2);
+}
+
+.category-label {
+  position: absolute;
+  opacity: 0;
+  transition: transform 200ms, opacity 200ms;
+  pointer-events: none;
+  color: black;
+}
+
+.menu-item:hover .category-label {
+  opacity: 1;
+}
+
+/* Para elementos a la izquierda del menú central */
+.menu-open:checked ~ .menu-item:nth-child(3):hover .category-label,
+.menu-open:checked ~ .menu-item:nth-child(6):hover .category-label {
+  transform: translateX(-110%);
+}
+
+/* Para elementos a la derecha del menú central */
+.menu-open:checked ~ .menu-item:nth-child(5):hover .category-label,
+.menu-open:checked ~ .menu-item:nth-child(8):hover .category-label {
+  transform: translateX(110%);
+}
+
+/* Para elementos en el centro, no aplicamos animación */
+.menu-open:checked ~ .menu-item:nth-child(4):hover .category-label{
+  transform: translateY(-70%);
+}
+.menu-open:checked ~ .menu-item:nth-child(7):hover .category-label {
+  transform: translateY(70%);
+}
 
 
+/* Reglas CSS para smartphone */
+@media only screen and (max-width: 480px) {
+  body {
+    font-size: 12px;
+    height: 100%;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  .menu-item, .menu-open-button {
+    width: 60px;
+    height: 60px;
+    margin-left: -30px;
+    top: 15%;
+    font-size: 16px;
+    line-height: 60px;
+  }
+
+  .hamburger {
+    width: 20px;
+    height: 2px;
+    margin-left: -10px;
+    margin-top: -1px;
+  }
+
+  .menu {
+    width: 280px;
+    height: 200px;
+    font-size: 16px;
+    padding: 10px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .menu-item:hover {
+    transform: scale(1.1);
+  }
+
+  .category-label {
+    font-size: 14px;
+  }
+}
+
+/* Reglas CSS para tablet */
+@media only screen and (min-width: 481px) and (max-width: 1024px) {
+  body {
+    font-size: 16px;
+    height: 100%;
+  }
+
+  h1 {
+    font-size: 3em;
+  }
+
+  .menu-item, .menu-open-button {
+    width: 70px;
+    height: 70px;
+    margin-left: -35px;
+    top: 20%;
+    font-size: 18px;
+    line-height: 70px;
+  }
+
+  .hamburger {
+    width: 22px;
+    height: 2px;
+    margin-left: -11px;
+    margin-top: -1px;
+  }
+
+  .menu {
+    width: 340px;
+    height: 220px;
+    font-size: 18px;
+    padding: 15px;
+    bottom: 5%;
+    left: 13%;
+  }
+
+  .menu-item:hover {
+    transform: scale(1.2);
+  }
+
+  .category-label {
+    font-size: 16px;
+  }
+}
