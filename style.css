@@ -203,7 +203,7 @@ h1 {
 
 /* Para elementos a la izquierda del menú central */
 .menu-open:checked~.menu-item:nth-child(3):hover .category-label,
-.menu-open:checked~.menu-item:nth-child(8):hover .category-label {
+.menu-open:checked~.menu-item:nth-child(6):hover .category-label {
   transform: translateX(-110%);
 }
 
