@@ -1,17 +1,10 @@
 body {
-  background: #8bc34a;
   color: white;
   text-align: center;
 }
 
 a {
-  color: inherit;
-}
-
-h1, h2, h3, h4 {
-  margin: 0;
-  margin-bottom: 10px;
-  margin-top: 10px;
+  color: white;
 }
 
 h1 {
@@ -23,13 +16,13 @@ h1 {
 }
 
 .menu-item, .menu-open-button {
-  background: #e91e63;
+  background: #051440;
   border-radius: 100%;
   width: 80px;
   height: 80px;
   margin-left: -40px;
   position: absolute;
-  top: 20px;
+  top: 20%;
   color: white;
   text-align: center;
   line-height: 80px;
@@ -76,9 +69,10 @@ h1 {
 
 .menu {
   filter: url('#goo');
-  position: absolute;
+  position: relative;
   left: 50%;
   margin-left: -190px;
+  margin-top: 20%;
   padding-top: 20px;
   padding-left: 190px;
   width: 380px;
@@ -89,8 +83,8 @@ h1 {
 }
 
 .menu-item:hover {
-  background: white;
-  color: #e91e63;
+  background: #051440;
+  color: white;
 }
 
 .menu-item:nth-child(3) {
@@ -141,7 +135,33 @@ h1 {
 
 .menu-open:checked ~ .menu-item:nth-child(3) {
   transition-duration: 180ms;
-  transform: translate3d(95.1056516295px, -30.9016994375px, 0);
+  transform: translate3d(-104px, -52px, 0);
 }
+
+.menu-open:checked ~ .menu-item:nth-child(4) {
+  transition-duration: 280ms;
+  transform: translate3d(0px, -104px, 0);
+}
+
+.menu-open:checked ~ .menu-item:nth-child(5) {
+  transition-duration: 380ms;
+  transform: translate3d(104px, -52px, 0);
+}
+
+.menu-open:checked ~ .menu-item:nth-child(6) {
+  transition-duration: 480ms;
+  transform: translate3d(-104px, 52px, 0);
+}
+
+.menu-open:checked ~ .menu-item:nth-child(7) {
+  transition-duration: 580ms;
+  transform: translate3d(0px, 104px, 0);
+}
+
+.menu-open:checked ~ .menu-item:nth-child(8) {
+  transition-duration: 680ms;
+  transform: translate3d(104px, 52px, 0);
+}
+
 
 
